@@ -7,8 +7,11 @@ class Ability
 
     if user.is? "USER"
       can [:index,:destroy,:update], :profile
+      can [:index,:destroy,:update,:create] ,:address
+      can [:index], :product
     elsif user.is? "ADMIN"
       can [:index,:destroy,:update,:show], :member
+      can [:index,:destroy,:update,:create] ,:product
     end
     # Define a few sample abilities
 
