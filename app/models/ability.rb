@@ -9,9 +9,12 @@ class Ability
       can [:index,:destroy,:update], :profile
       can [:index,:destroy,:update,:create] ,:address
       can [:index], :product
+      can [:index], :item
     elsif user.is? "ADMIN"
       can [:index,:destroy,:update,:show], :member
       can [:index,:destroy,:update,:create] ,:product
+      can [:index, :update, :create, :destroy], :item
+
     end
     # Define a few sample abilities
 
